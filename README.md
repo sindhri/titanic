@@ -2,12 +2,33 @@ The Titanic survival prediction from Kaggle competition.
 
 **End to end** **Python** based **predictive modeling** using modern **Machine Learning techniques** (Logistic Regression, K-nearest Neighbor, Decision Tree, Random Forest, Support Vector Classification (SVC), XGBoost) with **cross-validation**, **Grid and Random search** to tune each model, and eventually using **ensembler** to create a voting system to decide best prediction. (Inspired by Ken Jee!)
 
-The model reached 85% accuracy in the training data and 77% accuracy in the test data. One thing to mention is that, unlike many other practioners of Machine Learning, this model takes NO prior knowledge of the test data. 
-All the parameters were built only using the training data, which is critical for industry applications.
+<table>
+  <tr>
+    <th>Files</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td>/module/helpers.py</td>
+    <td>tools built to facilitate EDA and preprocessing</td>
+  </tr>
+  <tr>
+    <td>titanic_EDA.ipynb</td>
+    <td>EDA (Exploratory Data Analysis)</td>
+  </tr>
+  <tr>
+    <td>titanic_preprocessing_feature_Engineering.ipynb</td>
+    <td>Data preprocess and feature engineering</td>
+  </tr>
+    <tr>
+    <td>titanic_model.ipynb</td>
+    <td>Machine Learning model building and turning</td>
+  </tr>
+</table>
+<br>
+The model reached 85% accuracy in the training data and 77% accuracy in the test data. One thing to mention is that, unlike many other practioners of Machine Learning, this model takes NO prior knowledge of the test data. **All the parameters were built/trained only using the training data**, which is critical for **industry applications**.
 
 Titanic still occuplies our mind 100 years after the disaster happened. Among the over 2000 passengers, about 1500 lost their lives. 
-It would be vital to understand among the ones who died or survived, are their other factors that were associated with it. 
-It would be interesting to see whether we can use other information, such as sex, fare, age etc to predict whether a person was likely to survive.
+It would be vital to understand whether survival is related to other factors such as sex, fare, age, cabin and class categories.
 
 In this project, the training data has information on 891 participants including sex, age, amount of fare they paid, cabin number, ticket number, number of siblings or spouse onboard, number of children or parents onboard, class, embarked location, and whether they survived or not. 
 The test data has inforamtion on 418 and is asked to predict every one of them whether he/she was giong to survive.
