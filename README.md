@@ -1,8 +1,8 @@
 The Titanic survival prediction from Kaggle competition.
 
-End_to_end Python based predictive modeling using modern Machine Learning techniques (Logistic Regression, K-nearest Neighbor, Decision Tree, Random Forest, Support Vector Classification (SVC), XGBoost) with cross-validation, Grid and Random search to tune each model, and eventually using voting system to create the best prediction. (Inspired by Ken Jee!)
+**End to end** **Python** based **predictive modeling** using modern **Machine Learning techniques** (Logistic Regression, K-nearest Neighbor, Decision Tree, Random Forest, Support Vector Classification (SVC), XGBoost) with **cross-validation**, **Grid and Random search** to tune each model, and eventually using **ensembler** to create a voting system to decide best prediction. (Inspired by Ken Jee!)
 
-The model reached 86% accuracy in the training data and 77% accuracy in the test data. One thing to mention is that, unlike many other practioners of Machine Learning, this model takes NO prior knowledge of the test data. 
+The model reached 85% accuracy in the training data and 77% accuracy in the test data. One thing to mention is that, unlike many other practioners of Machine Learning, this model takes NO prior knowledge of the test data. 
 All the parameters were built only using the training data, which is critical for industry applications.
 
 Titanic still occuplies our mind 100 years after the disaster happened. Among the over 2000 passengers, about 1500 lost their lives. 
