@@ -101,10 +101,71 @@ moderatte survival rate with the following ticket_firstletter: C, None
 * based on EDA, the following variables should be included as features:
 * Pclass, name_title_adv, Sex, Age, Sibsp, Parch, Fare, Embarked, cabin_total, cabin_firstletter, ticket_firstletter
 
-# 2.	Preprocessing Fill in the missing data for Age [Will add visualization] 
+# 2.	Preprocessing + Feature Engineer Extract feature from Name, Cabin, and Ticket
+## Organized and prepared a helper module for feature engineering (according to EDA) so it can be readily applied for both the training and test sets.
+* convert Pclass to categorical
+* fill in the empty cells of 'Embarked'
+* normalize then fill in the empty cells for 'Fare'
+* Simplify Name by creating 'name_title_adv'
+* Simplify Cabin by creating 'cabin_firstletter' and 'cabin_total'
+* Simplify Ticket by creating 'ticket_firstletter'
+* Replace the values in 'name_title_adv' in the test set that is absent in the training with training mode
+* Fill the empty cells of Age by aggregrated values from 'name_title_adv'
+* remove extra columns
+* Merge training and test together to create a consistent dummy-variable set across train and test, then separate the datasets
+* scale the numeric columns for both datasets  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img25.png" width="450"><img src="https://github.com/sindhri/titanic/blob/master/images/img26.png" width="450"> 
 
-# 3.	Feature Engineer Extract feature from Name, Cabin, and Ticket [Will add visualization] 
+# 3.	Model buidling and tuning Several Machine Learning models
+* sklearn
+* Tested multiple ML models: Naive Bayes, Logistic Regression, Decision Tree, K Nearest Neighbors, Random Forest, SVC, XGBoost
+* Used sklearn.ensemble to create a voting system
+* Used the average accuracy from 5-folds cross-validtion
+* Turned each model by either Grid Search or Random Search to improve accuracy
 
-# 4.	Model buidling and tuning Several Machine Learning models were built using the default settings using cross validation. Then parameters were set for Grid/Random search to find the best parameters for each model. At the end use a voting system to create the most appropriate decision for each prediction. 
+Accuracy improvment after tuning:
+<table>
+  <tr>
+    <th>Algorithm</th>
+    <th>Accuracy with Default Parameters</th>
+    <th>Accuracy after Tuned</th>
+  </tr>
+  <tr>
+    <td>naive bayes</td>
+    <td>0.4668</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Logistic regression</td>
+    <td>0.8193</td>
+    <td>0.8215</td>
+  </tr>
+  <tr>
+    <td>Decision tree</td>
+    <td>0.7924</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>k nearest neighbor</td>
+    <td>0.8149</td>
+    <td>0.8249</td>
+  </tr>
+  <tr>
+    <td>Random Forest</td>
+    <td>0.81</td>
+    <td>0.8372</td>
+  </tr>
+  <tr>
+    <td>SVC</td>
+    <td>0.8306</td>
+    <td>0.8350</td>
+  </tr>
+  <tr>
+    <td>xgboost</td>
+    <td>0.8305</td>
+    <td>0.8451</td>
+  </tr>
+</table>
 
-Take away: The final model accuracy was 86% for the training data and 77% for the test data. More feature engining can be investigated to increase the accuracy.
+# 4. Prepare submission file using the algorithm of choice (xgboost after tuned)
+## Take away: The final model accuracy was 85% for the training data and 77% for the test data. More feature engining can be investigated to increase the accuracy.
