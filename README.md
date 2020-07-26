@@ -14,6 +14,7 @@ The test data has inforamtion on 418 and is asked to predict every one of them w
 The project has four steps:
 
 1.	EDA Study the training data and all the variables [Will add EDA plots] 
+![missing values](https://github.com/sindhri/titanic/blob/master/images/img1.png)
 
 2.	Preprocessing Fill in the missing data for Age [Will add visualization] 
 
