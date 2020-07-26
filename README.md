@@ -13,13 +13,98 @@ In this project, the training data has information on 891 participants including
 The test data has inforamtion on 418 and is asked to predict every one of them whether he/she was giong to survive.
 The project has four steps:
 
-1.	EDA Study the training data and all the variables [Will add EDA plots] 
-![missing values](https://github.com/sindhri/titanic/blob/master/images/img1.png)
+# 1.	EDA Study the training data and all the variables
 
-2.	Preprocessing Fill in the missing data for Age [Will add visualization] 
+## 1.1 check missing values, check variables in the datasets
+<img src="https://github.com/sindhri/titanic/blob/master/images/img1.png" width="250"><img src="https://github.com/sindhri/titanic/blob/master/images/img2.png" width="700">
 
-3.	Feature Engineer Extract feature from Name, Cabin, and Ticket [Will add visualization] 
+## 1.2 distribution of the numeric variables and their correlation
+observation: 
+* Age is pretty much normally distributed, the rest of the variables need normalization
+* Parch (number of parents/children aboard) is positively correlated with SibSp(number of sibling/spouse aboard)
+* age is negatiavelly correated with SibSp (number of siblings)  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img3.png" width="400"> <img src="https://github.com/sindhri/titanic/blob/master/images/img4.png" width="400">
+<img src="https://github.com/sindhri/titanic/blob/master/images/img5.png" width="400"> <img src="https://github.com/sindhri/titanic/blob/master/images/img6.png" width="400">
+<img src="https://github.com/sindhri/titanic/blob/master/images/img7.png" width="400">
 
-4.	Model buidling and tuning Several Machine Learning models were built using the default settings using cross validation. Then parameters were set for Grid/Random search to find the best parameters for each model. At the end use a voting system to create the most appropriate decision for each prediction. 
+## 1.3 bart plots of the categorical variables
+observations:    
+* more people died than survived
+* more people are in the 3rd class cabin  
+* more male than female
+* more people embared from S than from C and Q  
+
+<img src="https://github.com/sindhri/titanic/blob/master/images/img8.png" width="400"> <img src="https://github.com/sindhri/titanic/blob/master/images/img9.png" width="400"><br>
+<img src="https://github.com/sindhri/titanic/blob/master/images/img10.png" width="400"><img src="https://github.com/sindhri/titanic/blob/master/images/img11.png" width="400">
+
+## 1.4 compare the survival rate across all the numeric variables (Age, SibSp, Parch, and Fare) and categorical variables (Sex, Pclass, Embarked)
+* observation, higher Faire has a higher survival rate
+* high Parch has a higher survival rate
+* lower SibSp and lower age has a higher survival rate
+* Survivied female > male
+* Survivied Pclass 1 > 2 > 3
+* Survivied Embarked C > O > S  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img12.png" width="500"> <img src="https://github.com/sindhri/titanic/blob/master/images/img13.png" width="250">
+
+## 1.5 Experimenting with feature engineering
+### Simplify Cabin 1. by the number of cabins, NaN is 0, 2. 
+people with 1, 2, 4 cabins have a higher survival propertion than nonsurvive  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img14.png" width="400">
+### simplify Cabin 2. by the first letter of the cabin
+More people in the following categories survivied: B, D, E, F  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img15.png" width="500">
+### Simplify Tickets by the first letter of the ticket
+More survival with the following ticket_firstletter: F, P  
+Very little survival with the following ticket_firstletter: A, W  
+moderatte survival rate with the following ticket_firstletter: C, None  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img16.png" width="500">  
+### Simplify Name by extracting the title
+<img src="https://github.com/sindhri/titanic/blob/master/images/img17.png" width="900">  
+
+## 1.6 plot the survival rate in relation to multiple other features
+### Survival rate ~ Sex + Age
+* observation: male 20-40 yr many not survived
+* female has a large survival rate across all ages  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img18.png" width="900">  
+
+### Survival ~ Age + Sex + Pclass
+* observation, male from age 20-40 in Pclass 2 and 3 mostly did not survive
+<img src="https://github.com/sindhri/titanic/blob/master/images/img19.png" width="900">  
+
+### Survival ~ Embarked + Age + Pclass
+* Observations: Pclass 3 has a much lower survival rate than Pclass 1 and 2 across Sex and Embarked
+* Male when Embarked from Q has a particular lower survival rate than Embarked S and C  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img20.png" width="900"> 
+
+### Survival ~ Age + Fare
+* observation: Higher fare has a higher survival rate across most of the age spectrum. 
+* Younger age 0-10 has a higher survival rate
+* older age 60 + has a lower survival rate  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img21.png" width="500"> 
+
+### Survival ~ cabin_firstletter
+* Observation: most people fall in the category of n, which means none for cabin.
+* and in the n category the survival rate is lower than other categories  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img22.png" width="500"> 
+
+### Survival ~ ticket_firstletter
+* Observation: most people fall in the category of None, which means no ticket number.
+* and the survival rates are lower in the following categories: None, A, S, C, W  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img23.png" width="500"> 
+
+### Survival ~ name_title_adv
+* Observation: Most people fall in the Mr. category and it has a low survival rate
+* Category Msr, Miss, Master has a higher survival rate  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img24.png" width="900"> 
+
+### conclusion: 
+* based on EDA, the following variables should be included as features:
+* Pclass, name_title_adv, Sex, Age, Sibsp, Parch, Fare, Embarked, cabin_total, cabin_firstletter, ticket_firstletter
+
+# 2.	Preprocessing Fill in the missing data for Age [Will add visualization] 
+
+# 3.	Feature Engineer Extract feature from Name, Cabin, and Ticket [Will add visualization] 
+
+# 4.	Model buidling and tuning Several Machine Learning models were built using the default settings using cross validation. Then parameters were set for Grid/Random search to find the best parameters for each model. At the end use a voting system to create the most appropriate decision for each prediction. 
 
 Take away: The final model accuracy was 86% for the training data and 77% for the test data. More feature engining can be investigated to increase the accuracy.
