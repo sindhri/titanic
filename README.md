@@ -25,7 +25,9 @@ The Titanic survival prediction from Kaggle competition.
   </tr>
 </table>
 <br>
-The model reached 85% accuracy in the training data and 77% accuracy in the test data. One thing to mention is that, unlike many other practioners of Machine Learning, this model takes NO prior knowledge of the test data. **All the parameters were built/trained only using the training data**, which is critical for **industry applications**.
+The model reached 85% accuracy in the training data and 77% accuracy in the test data. One thing to mention is that, unlike many other practioners of Machine Learning, this model takes NO prior knowledge of the test data.
+
+**All the parameters were built/trained only using the training data**, which is critical for **industry applications**.
 
 Titanic still occuplies our mind 100 years after the disaster happened. Among the over 2000 passengers, about 1500 lost their lives. 
 It would be vital to understand whether survival is related to other factors such as sex, fare, age, cabin and class categories.
