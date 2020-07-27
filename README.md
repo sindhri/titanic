@@ -84,7 +84,7 @@ Observations:
 <img src="https://github.com/sindhri/titanic/blob/master/images/img12.png" width="500"> <img src="https://github.com/sindhri/titanic/blob/master/images/img13.png" width="250">
 
 ### 2.1.5 Experimenting with feature engineering
-**Simplify Cabin by the number of cabins, NaN is 0, 2.**  
+**Simplify Cabin by the number of cabins, NaN is counted as 0 cabins.**  
 Observation: 
 * people with 1, 2, 4 cabins have a higher survival propertion than nonsurvive  
 <img src="https://github.com/sindhri/titanic/blob/master/images/img14.png" width="400"><br>  
