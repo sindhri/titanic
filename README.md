@@ -1,11 +1,11 @@
 # Summary
 This project uses Machine Learning to predict the survival outcome for individual passengers on the Titanic, data source Kaggle competition.
 
-* **End to end** Python based **predictive modeling** 
+* **End to end** Python based **Predictive Modeling** 
 * Logistic Regression, K-nearest Neighbor, Decision Tree, Random Forest, Support Vector Classification (SVC), XGBoost
 * **cross-validation** 
 * **Grid and Random search** to for model tuning
-* **ensembler** for creating the best prediction. (Inspired by Ken Jee!)
+* **Ensembler** for creating the best prediction. (Inspired by Ken Jee!)
 * The model reached 85% accuracy in the training data and 77% accuracy in the test data.
 * **All the parameters were built/trained only using the training data**, which is critical for **industry applications**.
 
@@ -87,17 +87,17 @@ Observations:
 **Simplify Cabin by the number of cabins, NaN is 0, 2.**  
 Observation: 
 * people with 1, 2, 4 cabins have a higher survival propertion than nonsurvive  
-<img src="https://github.com/sindhri/titanic/blob/master/images/img14.png" width="400">  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img14.png" width="400"><br>  
 **Simplify Cabin by the first letter of the cabin**  
 Observation: 
 * More people in the following categories survivied: B, D, E, F  
-<img src="https://github.com/sindhri/titanic/blob/master/images/img15.png" width="500">  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img15.png" width="500"><br>  
 **Simplify Tickets by the first letter of the ticket**  
 Observation: 
 * More survival with the following ticket_firstletter: F, P  
 * Very little survival with the following ticket_firstletter: A, W  
 * moderatte survival rate with the following ticket_firstletter: C, None  
-<img src="https://github.com/sindhri/titanic/blob/master/images/img16.png" width="500">  
+<img src="https://github.com/sindhri/titanic/blob/master/images/img16.png" width="500"><br>  
 **Simplify Name by extracting the title**
 <img src="https://github.com/sindhri/titanic/blob/master/images/img17.png" width="900">  
 
