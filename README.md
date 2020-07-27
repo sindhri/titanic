@@ -3,7 +3,7 @@ This project uses Machine Learning to predict the survival outcome for individua
 
 * **End to end** Python based **Predictive Modeling** 
 * Logistic Regression, K-nearest Neighbor, Decision Tree, Random Forest, Support Vector Classification (SVC), XGBoost
-* **cross-validation** 
+* **Cross-validation** 
 * **Grid and Random search** to for model tuning
 * **Ensembler** for creating the best prediction. (Inspired by Ken Jee!)
 * The model reached 85% accuracy in the training data and 77% accuracy in the test data.
