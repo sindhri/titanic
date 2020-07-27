@@ -151,17 +151,17 @@ Observations:
 
 ## 2.2	Preprocessing + Feature Engineer Extract feature from Name, Cabin, and Ticket
 ### Organized and prepared a helper module for feature engineering (according to EDA) so it can be readily applied for both the training and test sets.
-* convert Pclass to categorical
-* fill in the empty cells of 'Embarked'
-* normalize then fill in the empty cells for 'Fare'
+* Convert Pclass to categorical
+* Fill in the empty cells of 'Embarked'
+* Normalize then fill in the empty cells for 'Fare'
 * Simplify Name by creating 'name_title_adv'
 * Simplify Cabin by creating 'cabin_firstletter' and 'cabin_total'
 * Simplify Ticket by creating 'ticket_firstletter'
 * Replace the values in 'name_title_adv' in the test set that is absent in the training with training mode
 * Fill the empty cells of Age by aggregrated values from 'name_title_adv'
-* remove extra columns
+* Remove extra columns
 * Merge training and test together to create a consistent dummy-variable set across train and test, then separate the datasets
-* scale the numeric columns for both datasets  
+* Scale the numeric columns for both datasets  
 <img src="https://github.com/sindhri/titanic/blob/master/images/img25.png" width="450"><img src="https://github.com/sindhri/titanic/blob/master/images/img26.png" width="450"> 
 
 # 3. DEVELOP: Model buidling and tuning Several Machine Learning models
@@ -216,4 +216,4 @@ Accuracy improvment after tuning:
 </table>
 
 # 4. DEPLOY: Prepare submission file using the algorithm of choice (xgboost after tuned)
-## Take away: The final model accuracy was 85% for the training data and 77% for the test data. More feature engining can be investigated to increase the accuracy.
+Take away: The final model accuracy was 85% for the training data and 77% for the test data. More feature engining can be investigated to increase the accuracy.
