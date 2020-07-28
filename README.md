@@ -168,4 +168,13 @@ Accuracy improvment after tuning:
 </table>
 
 # 4. Prepare submission file using the algorithm of choice (xgboost after tuned)
-## Take away: The final model accuracy was 85% for the training data and 77% for the test data. More feature engining can be investigated to increase the accuracy.
+
+## The final model accuracy was 85% for the training data and 77% for the test data. 
+
+## Feature Importance
+* Sex being male is the most important feature
+* Then the next important feature is whether the person is called Master
+* The next important feature is whether the passenger is in Pclass3
+src="https://github.com/sindhri/titanic/blob/master/images/img27.png" width="900"> 
+
+## More feature engining can be investigated to increase the accuracy.

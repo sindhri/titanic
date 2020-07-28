@@ -150,3 +150,21 @@ def apply_scaler(train, test):
     train_scaled[colnames] =  scale.fit_transform(train_scaled[colnames])
     test_scaled[colnames] =  scale.transform(test_scaled[colnames])
     return [train_scaled, test_scaled]
+
+#feature importance
+def get_model_feature_importances(model, feature_df):
+    if hasattr(model, 'feature_importances_'):
+        importances = model.feature_importances_
+    else:
+        importances = [0] * len(feature_df.columns)
+    
+    feature_importances = pd.DataFrame({'feature': feature_df.columns, 'importance': importances})
+    feature_importances.sort_values(by = 'importance', ascending = False, inplace = True)
+    ''' set the index to 'feature' '''
+    feature_importances.set_index('feature', inplace = True, drop = True)
+    return feature_importances
+
+def clf_performance(classifier, model_name):
+    print(model_name)
+    print('Best Score: ' + str(classifier.best_score_))
+    print('Best Parameters: ' + str(classifier.best_params_))
