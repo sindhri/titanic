@@ -34,7 +34,7 @@ This project uses Machine Learning to predict the survival outcome for individua
 <br>
 
 # 1. DEFINE the problem
-Titanic still occuplies our mind 100 years after the disaster happened. Among the over 2000 passengers, about 1500 lost their lives. 
+The Titanic still occupies our mind 100 years after the disaster happened. Among the over 2000 passengers, about 1500 lost their lives. 
 It would be vital to understand whether survival is related to other factors such as:
 * sex
 * fare
