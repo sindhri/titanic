@@ -1,5 +1,5 @@
 # Summary
-This project uses Machine Learning to predict the survival outcome for individual passengers on the Titanic, data source Kaggle competition.
+This project uses Machine Learning to predict the survival outcome for individual passengers on the Titanic. (Based on data from a Kaggle competition.)
 
 * **End to end** Python based **Predictive Modeling** 
 * Logistic Regression, K-nearest Neighbor, Decision Tree, Random Forest, Support Vector Classification (SVC), XGBoost
@@ -68,7 +68,7 @@ observations:
 * more people died than survived
 * more people are in the 3rd class cabin  
 * more male than female
-* more people embared from S than from C and Q  
+* more people embarked from S than from C and Q  
 
 <img src="https://github.com/sindhri/titanic/blob/master/images/img8.png" width="400"> <img src="https://github.com/sindhri/titanic/blob/master/images/img9.png" width="400"><br>
 <img src="https://github.com/sindhri/titanic/blob/master/images/img10.png" width="400"><img src="https://github.com/sindhri/titanic/blob/master/images/img11.png" width="400">
