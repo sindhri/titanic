@@ -223,7 +223,7 @@ Accuracy improvment after tuning:
 * Sex being male is the most important feature
 * Then the next important feature is whether the person is called Master
 * The next important feature is whether the passenger is in Pclass3
-src="https://github.com/sindhri/titanic/blob/master/images/img27.png" width="900"> 
+<img src="https://github.com/sindhri/titanic/blob/master/images/img27.png" width="900">
 
 ## More feature engining can be investigated to increase the accuracy.
 # 4. DEPLOY: Prepare submission file using the algorithm of choice (xgboost after tuned)
